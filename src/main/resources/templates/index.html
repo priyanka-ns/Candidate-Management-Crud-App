@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Home</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
+</head>
+<body style="background-color: #9bd7e7;">
+	<!-- Start Navbar -->
+
+	<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+		<div class="container-fluid">
+			<a class="navbar-brand  mr-0 justify-content-center" href="#">Candidate Application</a>
+			<button class="navbar-toggler" type="button"
+				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mb-2 mb-lg-0">
+					<li class="nav-item"><a class="nav-link navbar-nav text-right active"
+						aria-current="page" href="/">Home</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<!-- End Navabr -->
+
+
+	<div class="container p-5">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="card">
+					<div th:if="${session.msg}">
+						<h5 class="text-center text-success" th:text="${session.msg}"></h5>
+						<th:block th:text="${#session.removeAttribute('msg')}"></th:block>
+					</div>
+					<div class="card-header">
+						<a href="load_form" class="btn btn-outline-info btn-lg btn-dark">Add Candidate</a>
+					</div>
+
+					<div class="card-body">
+
+						<table class="table">
+							<thead>
+								<tr>
+									<th scope="col">Id</th>
+									<th scope="col">First Name</th>
+									<th scope="col">Last Name</th>
+									<th scope="col">Email</th>
+									<th scope="col">Phone No</th>
+									<th scope="col">Location</th>
+									<th scope="col">Education</th>
+									<th scope="col">Experience</th>
+									<th scope="col">Source</th>
+									<th scope="col">Status</th>
+									<th scope="col">Action</th>
+								</tr>
+							</thead>
+							<tbody>
+
+								<tr th:each="p : ${all_candidate}">
+									<th scope="row">[[${p.id}]]</th>
+									<td>[[${p.candidateFirstName}]]</td>
+									<td>[[${p.candidateLastName}]]</td>
+									<td>[[${p.candidateEmail}]]</td>
+									<td>[[${p.phoneNo}]]</td>
+									<td>[[${p.location}]]</td>
+									<td>[[${p.education}]]</td>
+									<td>[[${p.experience}]]</td>
+									<td>[[${p.source}]]</td>
+									<td>[[${p.status}]]</td>
+									<td><a th:href="@{'/edit_form/'+${p.id}   }"
+										class="btn btn-sm btn-info btn-lg btn-outline-success" style="color:#FFFFFF">Update </a> <a
+										th:href="@{'/delete/'+${p.id}}" class="btn btn-sm btn-danger">Delete
+									</a></td>
+								</tr>
+
+
+							</tbody>
+						</table>
+
+					</div>
+
+					<div class="card-footer">
+
+						<div class="row">
+							<div class="col-md-6">
+								<p>Total Elements : [[${totalElements}]]</p>
+							</div>
+
+							<div class="col-md-6">
+								<nav aria-label="Page navigation example">
+									<ul class="pagination">
+										<li th:classappend="${pageNo==0} ? 'disabled' : '' " class="page-item">
+										
+										<a th:if="${currentPage > 1}" class="page-link" th:href="@{'/page' + ${currentPage - 1}}">Previous</a>
+										
+										</li>
+										
+										
+										<li th:each="i : ${#numbers.sequence(1,totalPage)}" th:classappend="${pageNo+1==i}?'active':''" class="page-item">
+										
+										<a class="page-link" th:href="@{'/page/'+${i-1}}+ '?sortField='+${sortField}+'&sortDir='+${sortDir}  ">[[${i}]]</a>
+										
+										</li>
+										
+										
+										<li th:classappend="${pageNo+1 == totalPage} ?  'disabled' : ''  " class="page-item">
+										<a th:if="${currentPage< totalPages}" class="page-link" th:href="@{'/page' + ${currentPage + 1}}">Next</a>
+										
+										</li>
+									</ul>
+								</nav>
+							</div>
+						</div>
+
+
+
+
+					</div>
+
+				</div>
+
+
+			</div>
+		</div>
+	</div>
+
+
+
+
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+</body>
+</html>

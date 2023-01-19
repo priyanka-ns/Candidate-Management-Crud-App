@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Add candidate</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
+</head>
+<body style="background-color: #9bd7e7;">
+	<!-- Start Navbar -->
+
+	<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+		<div class="container-fluid">
+			<a class="navbar-brand  mr-0 justify-content-center" href="#">Candidate Application</a>
+			<button class="navbar-toggler" type="button"
+					data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+					aria-controls="navbarSupportedContent" aria-expanded="false"
+					aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mb-2 mb-lg-0">
+					<li class="nav-item"><a class="nav-link navbar-nav text-right active"
+											aria-current="page" href="/">Home</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+
+
+	<!-- End Navabr -->
+
+	<div class="container p-4">
+		<div class="row">
+			<div class="col-md-6 offset-md-3">
+				<div class="card">
+					<div class="card-body">
+
+						<h4 class="text-center" style="color:#149FDC">Add Candidate Form</h4>
+
+						<div th:if="${session.msg}">
+							<h5 class="text-center text-success" th:text="${session.msg}"></h5>
+							<th:block th:text="${#session.removeAttribute('msg')}"></th:block>
+						</div>
+
+
+						<form th:action="@{/save_candidate}" method="post">
+							<div class="mb-3">
+								<label for="candidateFirstName" class="form-label">Enter
+									Candidate's First Name </label> <input type="text" class="form-control"
+									id="candidateFirstName" aria-describedby="emailHelp"
+									name="candidateFirstName">
+
+							</div>
+							<div class="mb-3">
+								<label for="candidateLastName" class="form-label">Enter
+									Candidate's Last Name </label> <input type="text" class="form-control"
+									id="candidateLastName" aria-describedby="emailHelp"
+									name="candidateLastName">
+
+							</div>
+
+							<div class="mb-3">
+								<label for="candidateEmail" class="form-label">Enter Email
+								</label> <input type="email" class="form-control"
+									id="candidateEmail" aria-describedby="emailHelp"
+									name="candidateEmail">
+
+							</div>
+
+							<div class="mb-3">
+								<label for="phoneNo" class="form-label">Enter Phone No</label>
+								<input type="number" class="form-control"
+									id="phoneNo" aria-describedby="emailHelp"
+									name="phoneNo">
+
+							</div>
+
+							<div class="mb-3">
+								<label for="location" class="form-label">Enter Candidate's Location
+								</label> <input type="text" class="form-control"
+												id="location" aria-describedby="emailHelp"
+												name="location">
+
+							</div>
+
+							<div class="mb-3">
+								<label for="education" class="form-label">Education of Candidate
+								</label> <input type="text" class="form-control"
+												id="education" aria-describedby="emailHelp"
+												name="education">
+
+							</div>
+
+							<div class="mb-3">
+								<label for="experience" class="form-label">Enter Experience of Candidate (In Years)</label>
+								<input type="number" step="0.01" class="form-control"
+									   id="experience" aria-describedby="emailHelp"
+									   name="experience">
+
+							</div>
+
+							<div class="mb-3">
+								<label for="source" class="form-label">Source of Candidate
+								</label> <select name="source" id="source" class="form-control" aria-describedby="emailHelp">
+								<option value="agency">Agency</option>
+								<option value="careerSite">Career Site</option>
+								<option value="direct">Direct</option>
+								<option value="employeeReferral">Employee Referral</option>
+								<option value="naukri">Naukri</option>
+								<option value="sms">SMS</option>
+								<option value="socialNetwork">Social Network</option>
+							</select>
+							</div>
+
+							<div class="mb-3">
+								<label for="status" class="form-label">Status of Candidate
+								</label><select name="status"  id="status" class="form-control" aria-describedby="emailHelp">
+								<option value="applied">Applied</option>
+								<option value="hired">Hired</option>
+								<option value="offered">Offered</option>
+								<option value="rejected">Rejected</option>
+								<option value="suggested">Suggested</option>
+								<option value="round1">Round 1</option>
+								<option value="round2">Round 2</option>
+								<option value="round3">Round 3</option>
+							</select>
+
+							</div>
+
+							<button type="submit" class="btn btn-sm btn-info btn-lg btn-outline-success" style="color:#FFFFFF">Add
+								Candidate</button>
+						</form>
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+</body>
+</html>
