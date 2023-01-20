@@ -10,12 +10,29 @@
 	</parent>
 	<groupId>com.product</groupId>
 	<artifactId>Candidate-Management-Crud-App</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1-SNAPSHOT</version>	    
+	<packaging>war</packaging>
 	<name>Product-Management-Crud-App</name>
 	<description>Spring boot crud operation</description>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
+	<build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.3</version>
+            </plugin>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
