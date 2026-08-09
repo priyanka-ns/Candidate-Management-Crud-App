@@ -3,98 +3,145 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Candidate Management — UI Preview</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<title>Candidate Management — Interactive Demo</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<style>
+	body { background: #eef3f8; }
+	.navbar-brand { font-weight: 700; letter-spacing: .3px; }
+	.stat-card { border: none; border-radius: .9rem; box-shadow: 0 2px 10px rgba(0,0,0,.06); }
+	.stat-card .num { font-size: 1.6rem; font-weight: 700; }
+	.table thead th { cursor: pointer; user-select: none; white-space: nowrap; }
+	.table thead th .bi { font-size: .8rem; opacity: .6; }
+	.card-main { border: none; border-radius: 1rem; box-shadow: 0 4px 20px rgba(0,0,0,.07); }
+	.badge-soft { font-weight: 600; }
+	.demo-note { font-size: .8rem; }
+	.empty { color: #6c757d; }
+</style>
 </head>
-<body style="background-color: #9bd7e7;">
-	<nav class="navbar navbar-expand-md navbar-dark bg-dark">
-		<div class="container-fluid">
-			<a class="navbar-brand" href="index.html">Candidate Application</a>
-			<div class="collapse navbar-collapse">
-				<ul class="navbar-nav mb-2 mb-lg-0">
-					<li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-				</ul>
-			</div>
+<body>
+	<nav class="navbar navbar-dark bg-dark">
+		<div class="container">
+			<span class="navbar-brand"><i class="bi bi-people-fill me-2"></i>Candidate Management</span>
+			<a class="btn btn-outline-light btn-sm" href="https://github.com/priyanka-ns/Candidate-Management-Crud-App" target="_blank" rel="noopener"><i class="bi bi-github me-1"></i>Source</a>
 		</div>
 	</nav>
 
-	<div class="container pt-3">
-		<div class="alert alert-secondary small mb-0" role="alert">
-			Static UI preview with sample data. The full application is a Spring Boot + Spring Data JPA + MySQL project —
-			see the <a href="https://github.com/priyanka-ns/Candidate-Management-Crud-App">repository README</a> to run it locally.
+	<div class="container py-4">
+		<div class="d-flex flex-wrap justify-content-between align-items-center mb-2">
+			<div>
+				<h4 class="mb-0">Candidates</h4>
+				<div class="demo-note text-muted">Interactive demo &mdash; your changes are saved locally in this browser (localStorage). The full app runs on Spring Boot + MySQL.</div>
+			</div>
 		</div>
-	</div>
 
-	<div class="container p-5 pt-3">
-		<div class="row">
-			<div class="col-md-12">
-				<div class="card">
-					<div class="card-header">
-						<a href="add.html" class="btn btn-outline-info btn-lg btn-dark">Add Candidate</a>
-					</div>
-					<div class="card-body">
-						<table class="table">
-							<thead>
-								<tr>
-									<th scope="col">Id</th>
-									<th scope="col">First Name</th>
-									<th scope="col">Last Name</th>
-									<th scope="col">Email</th>
-									<th scope="col">Phone No</th>
-									<th scope="col">Location</th>
-									<th scope="col">Education</th>
-									<th scope="col">Experience</th>
-									<th scope="col">Source</th>
-									<th scope="col">Status</th>
-									<th scope="col">Action</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<th scope="row">1</th>
-									<td>Aarav</td><td>Sharma</td><td>aarav.sharma@example.com</td><td>9876543210</td>
-									<td>Mumbai</td><td>B.E. Computer</td><td>3.5</td><td>Employee Referral</td><td>Round 2</td>
-									<td><a href="edit.html" class="btn btn-sm btn-info btn-outline-success" style="color:#FFFFFF">Update</a>
-										<a href="#" class="btn btn-sm btn-danger">Delete</a></td>
-								</tr>
-								<tr>
-									<th scope="row">2</th>
-									<td>Neha</td><td>Verma</td><td>neha.verma@example.com</td><td>9812345678</td>
-									<td>Pune</td><td>MCA</td><td>2.0</td><td>Naukri</td><td>Applied</td>
-									<td><a href="edit.html" class="btn btn-sm btn-info btn-outline-success" style="color:#FFFFFF">Update</a>
-										<a href="#" class="btn btn-sm btn-danger">Delete</a></td>
-								</tr>
-								<tr>
-									<th scope="row">3</th>
-									<td>Rohan</td><td>Iyer</td><td>rohan.iyer@example.com</td><td>9900112233</td>
-									<td>Bengaluru</td><td>B.Sc IT</td><td>5.0</td><td>Career Site</td><td>Hired</td>
-									<td><a href="edit.html" class="btn btn-sm btn-info btn-outline-success" style="color:#FFFFFF">Update</a>
-										<a href="#" class="btn btn-sm btn-danger">Delete</a></td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-					<div class="card-footer">
-						<div class="row">
-							<div class="col-md-6"><p>Total Elements : 3</p></div>
-							<div class="col-md-6">
-								<nav aria-label="Page navigation">
-									<ul class="pagination">
-										<li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
-										<li class="page-item active"><a class="page-link" href="#">1</a></li>
-										<li class="page-item disabled"><a class="page-link" href="#">Next</a></li>
-									</ul>
-								</nav>
-							</div>
-						</div>
-					</div>
+		<!-- Stats -->
+		<div class="row g-3 mb-3">
+			<div class="col-6 col-md-3"><div class="card stat-card p-3"><div class="text-muted small">Total</div><div class="num" id="statTotal">0</div></div></div>
+			<div class="col-6 col-md-3"><div class="card stat-card p-3"><div class="text-muted small">Hired</div><div class="num text-success" id="statHired">0</div></div></div>
+			<div class="col-6 col-md-3"><div class="card stat-card p-3"><div class="text-muted small">In Process</div><div class="num text-warning" id="statProcess">0</div></div></div>
+			<div class="col-6 col-md-3"><div class="card stat-card p-3"><div class="text-muted small">Rejected</div><div class="num text-danger" id="statRejected">0</div></div></div>
+		</div>
+
+		<div class="card card-main">
+			<div class="card-header bg-white d-flex flex-wrap gap-2 justify-content-between align-items-center py-3">
+				<div class="input-group" style="max-width: 340px;">
+					<span class="input-group-text bg-white"><i class="bi bi-search"></i></span>
+					<input type="text" id="search" class="form-control" placeholder="Search name, email, location...">
 				</div>
+				<div class="d-flex gap-2">
+					<button class="btn btn-outline-secondary btn-sm" id="btnReset"><i class="bi bi-arrow-counterclockwise me-1"></i>Reset demo</button>
+					<button class="btn btn-primary" id="btnAdd"><i class="bi bi-plus-lg me-1"></i>Add Candidate</button>
+				</div>
+			</div>
+			<div class="card-body p-0">
+				<div class="table-responsive">
+					<table class="table table-hover align-middle mb-0">
+						<thead class="table-light">
+							<tr>
+								<th data-sort="id">Id <i class="bi"></i></th>
+								<th data-sort="candidateFirstName">Name <i class="bi"></i></th>
+								<th data-sort="candidateEmail">Email <i class="bi"></i></th>
+								<th data-sort="phoneNo">Phone <i class="bi"></i></th>
+								<th data-sort="location">Location <i class="bi"></i></th>
+								<th data-sort="education">Education <i class="bi"></i></th>
+								<th data-sort="experience">Exp <i class="bi"></i></th>
+								<th data-sort="source">Source <i class="bi"></i></th>
+								<th data-sort="status">Status <i class="bi"></i></th>
+								<th class="text-end">Actions</th>
+							</tr>
+						</thead>
+						<tbody id="tbody"></tbody>
+					</table>
+				</div>
+			</div>
+			<div class="card-footer bg-white d-flex flex-wrap justify-content-between align-items-center">
+				<span class="text-muted small" id="countLabel"></span>
+				<nav><ul class="pagination pagination-sm mb-0" id="pager"></ul></nav>
 			</div>
 		</div>
 	</div>
 
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+	<!-- Add/Edit Modal -->
+	<div class="modal fade" id="formModal" tabindex="-1">
+		<div class="modal-dialog modal-lg modal-dialog-centered">
+			<div class="modal-content">
+				<form id="candidateForm" novalidate>
+					<div class="modal-header">
+						<h5 class="modal-title" id="modalTitle">Add Candidate</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+					</div>
+					<div class="modal-body">
+						<input type="hidden" id="fld-id">
+						<div class="row g-3">
+							<div class="col-md-6"><label class="form-label">First Name *</label><input required class="form-control" id="fld-firstName"><div class="invalid-feedback">First name is required.</div></div>
+							<div class="col-md-6"><label class="form-label">Last Name *</label><input required class="form-control" id="fld-lastName"><div class="invalid-feedback">Last name is required.</div></div>
+							<div class="col-md-6"><label class="form-label">Email *</label><input required type="email" class="form-control" id="fld-email"><div class="invalid-feedback">Enter a valid email.</div></div>
+							<div class="col-md-6"><label class="form-label">Phone No *</label><input required type="text" inputmode="numeric" pattern="[0-9]{7,15}" class="form-control" id="fld-phone"><div class="invalid-feedback">Enter 7-15 digits.</div></div>
+							<div class="col-md-6"><label class="form-label">Location</label><input class="form-control" id="fld-location"></div>
+							<div class="col-md-6"><label class="form-label">Education</label><input class="form-control" id="fld-education"></div>
+							<div class="col-md-4"><label class="form-label">Experience (yrs)</label><input type="number" step="0.1" min="0" class="form-control" id="fld-experience" value="0"></div>
+							<div class="col-md-4"><label class="form-label">Source</label>
+								<select class="form-select" id="fld-source">
+									<option value="agency">Agency</option>
+									<option value="careerSite">Career Site</option>
+									<option value="direct">Direct</option>
+									<option value="employeeReferral">Employee Referral</option>
+									<option value="naukri">Naukri</option>
+									<option value="sms">SMS</option>
+									<option value="socialNetwork">Social Network</option>
+								</select></div>
+							<div class="col-md-4"><label class="form-label">Status</label>
+								<select class="form-select" id="fld-status">
+									<option value="applied">Applied</option>
+									<option value="suggested">Suggested</option>
+									<option value="round1">Round 1</option>
+									<option value="round2">Round 2</option>
+									<option value="round3">Round 3</option>
+									<option value="offered">Offered</option>
+									<option value="hired">Hired</option>
+									<option value="rejected">Rejected</option>
+								</select></div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+						<button type="submit" class="btn btn-primary"><i class="bi bi-check-lg me-1"></i>Save</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!-- Toast -->
+	<div class="toast-container position-fixed bottom-0 end-0 p-3">
+		<div id="toast" class="toast align-items-center text-bg-success border-0" role="alert">
+			<div class="d-flex"><div class="toast-body" id="toastMsg"></div>
+				<button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button></div>
+		</div>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="app.js"></script>
 </body>
 </html>
