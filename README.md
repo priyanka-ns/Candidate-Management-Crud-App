@@ -1,5 +1,8 @@
 # Candidate Management CRUD App
 
+**🔗 Live UI Preview:** https://priyanka-ns.github.io/Candidate-Management-Crud-App/
+*(A static preview of the interface with sample data, hosted on GitHub Pages. The full application is dynamic and needs Java + MySQL to run — see the steps below.)*
+
 A web-based **Spring Boot** application to manage candidate records with full **CRUD** (Create, Read, Update, Delete) operations, server-side **pagination** and **sorting**. Built as a hands-on project to practise Spring Boot, Spring Data JPA and server-rendered views with Thymeleaf.
 
 ## Features
