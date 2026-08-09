@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Candidate Management — UI Preview</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body style="background-color: #9bd7e7;">
+	<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="index.html">Candidate Application</a>
+			<div class="collapse navbar-collapse">
+				<ul class="navbar-nav mb-2 mb-lg-0">
+					<li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container pt-3">
+		<div class="alert alert-secondary small mb-0" role="alert">
+			Static UI preview with sample data. The full application is a Spring Boot + Spring Data JPA + MySQL project —
+			see the <a href="https://github.com/priyanka-ns/Candidate-Management-Crud-App">repository README</a> to run it locally.
+		</div>
+	</div>
+
+	<div class="container p-5 pt-3">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="card">
+					<div class="card-header">
+						<a href="add.html" class="btn btn-outline-info btn-lg btn-dark">Add Candidate</a>
+					</div>
+					<div class="card-body">
+						<table class="table">
+							<thead>
+								<tr>
+									<th scope="col">Id</th>
+									<th scope="col">First Name</th>
+									<th scope="col">Last Name</th>
+									<th scope="col">Email</th>
+									<th scope="col">Phone No</th>
+									<th scope="col">Location</th>
+									<th scope="col">Education</th>
+									<th scope="col">Experience</th>
+									<th scope="col">Source</th>
+									<th scope="col">Status</th>
+									<th scope="col">Action</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">1</th>
+									<td>Aarav</td><td>Sharma</td><td>aarav.sharma@example.com</td><td>9876543210</td>
+									<td>Mumbai</td><td>B.E. Computer</td><td>3.5</td><td>Employee Referral</td><td>Round 2</td>
+									<td><a href="edit.html" class="btn btn-sm btn-info btn-outline-success" style="color:#FFFFFF">Update</a>
+										<a href="#" class="btn btn-sm btn-danger">Delete</a></td>
+								</tr>
+								<tr>
+									<th scope="row">2</th>
+									<td>Neha</td><td>Verma</td><td>neha.verma@example.com</td><td>9812345678</td>
+									<td>Pune</td><td>MCA</td><td>2.0</td><td>Naukri</td><td>Applied</td>
+									<td><a href="edit.html" class="btn btn-sm btn-info btn-outline-success" style="color:#FFFFFF">Update</a>
+										<a href="#" class="btn btn-sm btn-danger">Delete</a></td>
+								</tr>
+								<tr>
+									<th scope="row">3</th>
+									<td>Rohan</td><td>Iyer</td><td>rohan.iyer@example.com</td><td>9900112233</td>
+									<td>Bengaluru</td><td>B.Sc IT</td><td>5.0</td><td>Career Site</td><td>Hired</td>
+									<td><a href="edit.html" class="btn btn-sm btn-info btn-outline-success" style="color:#FFFFFF">Update</a>
+										<a href="#" class="btn btn-sm btn-danger">Delete</a></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="card-footer">
+						<div class="row">
+							<div class="col-md-6"><p>Total Elements : 3</p></div>
+							<div class="col-md-6">
+								<nav aria-label="Page navigation">
+									<ul class="pagination">
+										<li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+										<li class="page-item active"><a class="page-link" href="#">1</a></li>
+										<li class="page-item disabled"><a class="page-link" href="#">Next</a></li>
+									</ul>
+								</nav>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
